@@ -92,6 +92,18 @@ p, h2 {
 }
 
 /*
+Elementos con clase darkMode
+- Se cambia el fondo de color
+- Se cambia el color de los elementos con clase BodyText
+*/
+.DarkTheme {
+    background-color: rgb(21, 30, 33);
+    .BodyText {
+        color: white;
+    }
+}
+
+/*
 Elementos con clase Gallery
 - Se cambia la anchura maxima a 1200 pixeles, el margen a 0 en vertical y automatico en horizontal y el relleno a 30 pixeles
 - Se cambia el tipo de visualizacion a grid, se crean filas de 1 elemento y 300 pixeles y la distancia entre elementos a 20 pixeles
@@ -193,6 +205,14 @@ footer {
         justify-content: center;
     }
     
+    /*
+    Elemento con ID Logo
+    - Se reduce la anchura del logo
+    */
+    #Logo {
+        width: 10%;
+    }
+
     /*
     Elementos con ID CompanyName
     - Se cambia la anchura al 50% de la pagina
