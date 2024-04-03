@@ -68,6 +68,7 @@ Elemento con ID NavegationMenu
 */
 #NavegationMenu {
     width: 10%;
+    padding: 10px;
     li {
         font-size: 0.28cm;
     }
@@ -101,6 +102,16 @@ Elementos con clase darkMode
     .BodyText {
         color: white;
     }
+}
+
+/*
+Elementos con clase Main
+- Se cambia la anchura maxima a 1200 pixeles, el margen a 0 en vertical y automatico en horizontal y el relleno a 30 pixeles
+*/
+.Main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
 }
 
 /*
@@ -228,5 +239,24 @@ footer {
     */
     #NavegationMenu li {
         font-size: 0.4cm;
+    }
+}
+
+/* Responsive breakpoint para pantallas mas anchas de 1000 pixeles */
+@media screen and (min-width: 1500px) {
+    /*
+    Elementos con ID CompanyName
+    - Se cambia la anchura al 42% de la pagina
+    */
+    #CompanyName {
+        width: 42%;
+    }
+
+    /*
+    Elementos de lista con ID NavegationMenu
+    - Se cambia la anchura al 8% de la pagina
+    */
+    #NavegationMenu {
+        width: 8%;
     }
 }

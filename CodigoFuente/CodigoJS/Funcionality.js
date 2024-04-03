@@ -1,10 +1,10 @@
 "use strict";
 
 // Cuerpo
-var body = document.querySelector("body");
+let body = document.querySelector("body");
 
 // Botones para cambiar el tema de la pagina
-var themeChangers = document.querySelectorAll(".themeChanger");
+let themeChangers = document.querySelectorAll(".themeChanger");
 // Añadimos a los botones la funcion de cambiar el tema
 themeChangers.forEach(button => {
     button.addEventListener("click", themeChange);
@@ -18,10 +18,65 @@ function themeChange() {
     storeTheme(body.classList.contains("DarkTheme"));
 }
 
+// Funcion para pasar el mes de formato numerico a string
+function getMonthString(month)
+{
+    // Comprobamos el mes
+    switch (month) {
+        case 0:
+            return "Enero";
+        case 1:
+            return "Febrero";
+        case 2:
+            return "Marzo";
+        case 3:
+            return "Abril";
+        case 4:
+            return "Mayo";
+        case 5:
+            return "Junio";
+        case 6:
+            return "Julio";
+        case 7:
+            return "Agosto";
+        case 8:
+            return "Septiembre";
+        case 9:
+            return "Octubre";
+        case 10:
+            return "Noviembre";
+        case 11:
+            return "Diciembre";
+        default:
+            return "MES ERRONEO";
+    }
+}
+
+// Funcion para obtener la fecha actual en formato legible
+function getActualDate() {
+    // Obtenemos la fecha actual
+    let date = new Date();
+    // Obtenemos hora y minutos del dia
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    if(minutes < 10) {
+        minutes = "0" + minutes.toString();
+    }
+    // Obtenemos dia, mes y año
+    let day = date.getDate();
+    let month = getMonthString(date.getMonth());
+    let year = date.getFullYear();
+    // Creamos y devolvemos un mensaje con la fecha legible
+    let dateString = `Son las ${hours}:${minutes} del ${day} de ${month} del ${year}`;
+    return dateString;
+}
+
 // Funcion para saludar al usuario con la fecha actual
 function welcomeUser() {
-    let date = new Date();
-    alert("¡Bienvenido! Estamos a "+date);
+    // Obtenemos la fecha
+    let date = getActualDate();
+    // Enviamos la alerta con el mensaje
+    alert("¡Bienvenido! "+date);
 }
 
 // Funcion para guardar si el tema oscuro esta seleccionado
