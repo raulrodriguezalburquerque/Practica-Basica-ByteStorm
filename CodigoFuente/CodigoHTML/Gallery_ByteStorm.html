@@ -9,11 +9,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../StyleSheet/StyleSheet.css">
         <script type="module" src="../CodigoJS/Funcionality.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </head>
 
     <!--
     Cuerpo de la pagina
     - Cabecera
+    - Menu de navegacion
     - Main
     - Pie de pagina
     -->
@@ -22,39 +25,124 @@
         Cabecera de la pagina
         - Logo de la empresa
         - Titulo con nombre de la empresa
-        - Menu de navegacion
         - Boton para cambiar de tema
         -->
         <header>
-            <img src="../Recursos/ByteStorm_Logo.jpg" id="Logo" alt="Logo">
-            
-            <h1 id="CompanyName">ByteStorm Solutions</h1>
-
-            <nav id="NavegationMenu">
-                <ul>
-                    <li><a href="./Home_ByteStorm.html">Inicio</a></li>
-                    <li><a href="./About_ByteStorm.html">Sobre nosotros</a></li>
-                    <li><a href="./Gallery_ByteStorm.html">Galeria</a></li>
-                </ul>
-            </nav>
-
-            <button class="themeChanger">Tema</button>
+            <div class="container p-2">
+                <div class="row align-items-center">
+                    <div class="col-4 col-md-2 mb-2">
+                        <img src="../Recursos/ByteStorm_Logo.jpg" class="img-fluid" alt="Logo">
+                    </div>
+                    <div class="col-8 col-md-8 mb-2">
+                        <h1 class="company-name display-1 text-center">ByteStorm Solutions</h1>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <button class="btn btn-light themeChanger">Tema</button>
+                    </div>
+                </div>
+            </div>
         </header>
         
         <!--
-        Main de la pagina
-        - Imagenes
+        Menu de navegacion
         -->
-        <main>
-            <div class="Gallery">
-                <div class="Box"> <img src="../Recursos/Img_Ciberseguridad_1.jpg" alt="Img 1"> </div>
-                <div class="Box"> <img src="../Recursos/Img_Ciberseguridad_2.jpg" alt="Img 2"> </div>
-                <div class="Box"> <img src="../Recursos/Img_Ciberseguridad_3.jpg" alt="Img 3"> </div>
-                <div class="Box"> <img src="../Recursos/Img_Ciberseguridad_4.png" alt="Img 4"> </div>
-                <div class="Box"> <img src="../Recursos/Img_Ciberseguridad_5.jpg" alt="Img 5"> </div>
-                <div class="Box"> <img src="../Recursos/Img_Ciberseguridad_6.jpg" alt="Img 6"> </div>
-                <div class="Box"> <img src="../Recursos/Img_Ciberseguridad_7.jpg" alt="Img 7"> </div>
-                <div class="Box"> <img src="../Recursos/Img_Ciberseguridad_8.jpg" alt="Img 8"> </div>
+        <ul class="nav nav-pills blue">
+            <li class="nav-item">
+                <a class="nav-link" href="Home_ByteStorm.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="About_ByteStorm.html">Sobre nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="Gallery_ByteStorm.html">Galeria</a>
+            </li>
+        </ul>
+
+        <!--
+        Main de la pagina
+        - Carrusel de imagenes
+        - Grid de imagenes
+        -->
+        <main class="container pt-5">
+            <!-- Carrusel -->
+            <div id="img-carousel">
+                <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Indicador de foto activa -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="5"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="6"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="7"></button>
+                    </div>
+                
+                    <!-- Fotos del carrusel -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Recursos/Img_Ciberseguridad_1.jpg" class="img-thumbnail d-block w-100" alt="Img 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Recursos/Img_Ciberseguridad_2.jpg" class="img-thumbnail d-block w-100" alt="Img 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Recursos/Img_Ciberseguridad_3.jpg" class="img-thumbnail d-block w-100" alt="Img 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Recursos/Img_Ciberseguridad_4.png" class="img-thumbnail d-block w-100" alt="Img 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Recursos/Img_Ciberseguridad_5.jpg" class="img-thumbnail d-block w-100" alt="Img 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Recursos/Img_Ciberseguridad_6.jpg" class="img-thumbnail d-block w-100" alt="Img 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Recursos/Img_Ciberseguridad_7.jpg" class="img-thumbnail d-block w-100" alt="Img 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Recursos/Img_Ciberseguridad_8.jpg" class="img-thumbnail d-block w-100" alt="Img 3">
+                        </div>
+                    </div>
+                
+                    <!-- Botones para cambiar de imagen -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="img-grid">
+                <div class="col mb-3">
+                    <img src="../Recursos/Img_Ciberseguridad_1.jpg" class="img-thumbnail d-block object-fit-cover h-100 w-100" alt="Img 1">
+                </div>
+                <div class="col mb-3">
+                    <img src="../Recursos/Img_Ciberseguridad_2.jpg" class="img-thumbnail d-block object-fit-cover h-100 w-100" alt="Img 2">
+                </div>
+                <div class="col mb-3">
+                    <img src="../Recursos/Img_Ciberseguridad_3.jpg" class="img-thumbnail d-block object-fit-cover h-100 w-100" alt="Img 3">
+                </div>
+                <div class="col mb-3">
+                    <img src="../Recursos/Img_Ciberseguridad_4.png" class="img-thumbnail d-block object-fit-cover h-100 w-100" alt="Img 4">
+                </div>
+                <div class="col mb-3">
+                    <img src="../Recursos/Img_Ciberseguridad_5.jpg" class="img-thumbnail d-block object-fit-cover h-100 w-100" alt="Img 5">
+                </div>
+                <div class="col mb-3">
+                    <img src="../Recursos/Img_Ciberseguridad_6.jpg" class="img-thumbnail d-block object-fit-cover h-100 w-100" alt="Img 6">
+                </div>
+                <div class="col mb-3">
+                    <img src="../Recursos/Img_Ciberseguridad_7.jpg" class="img-thumbnail d-block object-fit-cover h-100 w-100" alt="Img 7">
+                </div>
+                <div class="col mb-3">
+                    <img src="../Recursos/Img_Ciberseguridad_8.jpg" class="img-thumbnail d-block object-fit-cover h-100 w-100" alt="Img 8">
+                </div>
             </div>
         </main>
 
@@ -64,14 +152,18 @@
         - Texto con aviso de Copyright
         -->
         <footer>
-            <ul>
-                <li>Correo: <a href="mailto:info@bytestorm.com">info@bytestorm.com</a></li>
-                <li>Numero: <a href="tel:123 45 67 89">123 45 67 89</a> </li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/company/bytestorm/about/" target="_blank" rel="noopener noreferrer">Bytestorm, LLC</a></li>
-                <li>Instagram: <a href="https://www.instagram.com/bytestormllc/?utm_source=ig_embed" target="_blank" rel="noopener noreferrer">bytestormllc</a></li>
-            </ul>
-
-            <p>&copy; 2024 ByteStorm</p>
+            <div class="container">
+                <div class="d-flex flex-column align-items-center pt-2">
+                    <ul>
+                        <li>Correo: <a href="mailto:info@bytestorm.com">info@bytestorm.com</a></li>
+                        <li>Numero: <a href="tel:123 45 67 89">123 45 67 89</a> </li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/company/bytestorm/about/" target="_blank" rel="noopener noreferrer">Bytestorm, LLC</a></li>
+                        <li>Instagram: <a href="https://www.instagram.com/bytestormllc/?utm_source=ig_embed" target="_blank" rel="noopener noreferrer">bytestormllc</a></li>
+                    </ul>
+                    
+                    <p>&copy; 2024 ByteStorm</p>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

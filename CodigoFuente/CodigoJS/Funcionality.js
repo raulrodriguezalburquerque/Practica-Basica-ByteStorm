@@ -13,9 +13,14 @@ themeChangers.forEach(button => {
 // Funcion para cambiar el tema de la pagina
 function themeChange() {
     // Se cambia la clase del cuerpo a tema oscuro o se quita si ya la tenia
-    body.classList.toggle("DarkTheme");
+    body.classList.toggle("dark-theme");
     // Se guarda si el cuerpo tiene el tema oscuro
-    storeTheme(body.classList.contains("DarkTheme"));
+    storeTheme(body.classList.contains("dark-theme"));
+    // Se cambia la clase del boton para que cambie de color
+    themeChangers.forEach(button => {
+        button.classList.toggle("btn-light");
+        button.classList.toggle("btn-dark");
+    });
 }
 
 // Funcion para pasar el mes de formato numerico a string
@@ -86,13 +91,10 @@ function storeTheme(theme) {
 
 // Cuando la pagina se carga, se carga el tema y se lanza un mensaje de bienvenida
 window.addEventListener("load", function(){
-    // Comprobamos el tema que teniamos puesto y se carga
+    // Comprobamos si teniamos puesto el modo oscuro para colocarlo
     const darkTheme = localStorage.getItem("darkTheme");
-    if(!darkTheme) {
-        storeTheme("false");
-    }
-    else if(darkTheme == "true") {
-        body.classList.add("DarkTheme");
+    if(darkTheme == "true") {
+        themeChange();
     }
     // Lanzamos mensaje de bienvenida
     welcomeUser();

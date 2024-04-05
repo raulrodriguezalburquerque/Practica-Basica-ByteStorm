@@ -7,97 +7,74 @@ html
 html {
     min-height: 100%;
     position: relative;
-    padding-bottom: 120px;
+    padding-bottom: 180px;
 }
 
 /*
 Todos los elementos
-- Se elimina el espacio en el borde y el relleno
-- Se cambia el calculo de ancho y alto de los elementos a border-box
 - Se cambia el tipo de fuente del texto
 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /*
 Cabecera
 - Se cambia la anchura al 100% de la pagina
-- Se añaden 10 pixeles de relleno
-- Se cambia el tipo de visualizacion a flex y los elementos se alinean al centro y se distribuyen de forma equitativa
 - Se cambia el color de fondo y el color de letra
 */
 header {
     width: 100%;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     background-color: rgb(0, 165, 162);
     color: white;
 }
 
 /*
-Elemento con ID Logo
-- Se cambia la anchura del logo
+Elementos con clase .company-name
+- Se cambia el color de fuente
 */
-#Logo {
-    width: 15%;
-}
-
-/*
-Elemento con ID CompanyName
-- Se cambia la anchura al 80% de la pagina
-- Se centra el texto
-- Se cambia el tamaño y el color de letra
-*/
-#CompanyName {
-    width: 30%;
-    text-align: center;
-    font-size: 0.5cm;
+.company-name {
     color: rgb(1, 61, 134);
 }
 
 /*
-Elemento con ID NavegationMenu
-- Se cambia la anchura al 15% de la pagina
-- Se cambia el tamaño de la fuente de los elementos de la lista
+Elementos con clase .nav, .nav-pills y .blue
+- Se añade un padding de 5 pixeles
+- Se cambia el color de fondo
 */
-#NavegationMenu {
-    width: 10%;
-    padding: 10px;
-    li {
-        font-size: 0.28cm;
+.nav.nav-pills.blue {
+    padding: 5px;
+    background-color: rgb(4, 145, 143);
+}
+
+/*
+Elemento con clase .nav-item dentro de clase .blue (elementos del menu de navegacion azul)
+- Se cambia el color de letra de los items con clase .nav-link a blanco (elementos del menu de navegacion)
+- Se cambia el color de fondo de los items con clase .nav-link y .active (elementos activos del menu de navegacion)
+*/
+.blue .nav-item {
+    .nav-link {
+        color: white;
+    }
+    .nav-link.active {
+        background-color: rgb(1, 61, 134);
     }
 }
 
 /*
-Elementos con clase Title
+Elementos con clase .Title
 - Se cambia el tamaño y el color de letra
 */
-.Title {
-    font-size: 0.6cm;
+.title {
     color: rgb(0, 165, 162);
 }
 
 /*
-Hipertextos y titulos h2
-- Se cambia el espacio en el borde y el relleno a 5 pixeles
-*/
-p, h2 {
-    margin: 5px;
-    padding: 5px;
-}
-
-/*
-Elementos con clase darkMode
+Elementos con clase .DarkTheme
 - Se cambia el fondo de color
-- Se cambia el color de los elementos con clase BodyText
+- Se cambia el color de los elementos con clase .BodyText
 */
-.DarkTheme {
+.dark-theme {
     background-color: rgb(21, 30, 33);
     .BodyText {
         color: white;
@@ -105,158 +82,44 @@ Elementos con clase darkMode
 }
 
 /*
-Elementos con clase Main
-- Se cambia la anchura maxima a 1200 pixeles, el margen a 0 en vertical y automatico en horizontal y el relleno a 30 pixeles
-*/
-.Main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px;
-}
-
-/*
-Elementos con clase Gallery
-- Se cambia la anchura maxima a 1200 pixeles, el margen a 0 en vertical y automatico en horizontal y el relleno a 30 pixeles
-- Se cambia el tipo de visualizacion a grid, se crean filas de 1 elemento y 300 pixeles y la distancia entre elementos a 20 pixeles
-*/
-.Gallery {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 300px;
-    grid-gap: 20px;
-}
-
-/*
-Imagenes dentro de los elementos con clase Box
-- Se ajusta la altura y anchura al 100%
-- Se cambia el tipo de llenado del contenedor a cover
-*/
-.Box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/*
 Pie de pagina
-- Se cambia la posicion a absoluta, la anchura al 100%, altura a 120 pixeles y se desplaza a abajo
-- Se añade relleno de 15 pixeles
-- Se cambia el tipo de visualizacion a flex, se organizan los elementos en columna y se alinean y distribuyen al centro
+- Se cambia la posicion a absoluta, la anchura al 100%, altura a 140 pixeles y se desplaza a abajo
 - Se cambia el color de fondo y el tamaño y color de letra
 */
 footer {
     position: absolute;
     width: 100%;
-    height: 120px;
+    height: 140px;
     bottom: 0;
-    padding: 15px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     background-color: rgb(0, 165, 162);
     font-size: 0.35cm;
     color: white;
 }
 
-/* Responsive breakpoint para pantallas mas anchas de 400 pixeles */
-@media screen and (min-width: 400px) {
-    /*
-    Elementos con ID CompanyName
-    - Se aumenta el tamaño de fuente
-    */
-    #CompanyName {
-        font-size: 0.65cm;
-    }
+/*
+Elementos con ID #img-carousel y #img-grid
+- Para pantallas pequeñas, se muestra el carrusel y se oculta el grid de imagenes
+*/
+#img-carousel {
+    display: block;
 }
 
-/* Responsive breakpoint para pantallas mas anchas de 600 pixeles */
-@media screen and (min-width: 600px) {
-    /*
-    Elementos con ID CompanyName
-    - Se cambia la anchura al 50% de la pagina
-    - Se aumenta el tamaño de fuente
-    */
-    #CompanyName {
-        width: 50%;
-        font-size: 1cm;
-    }
-
-    /*
-    Elementos de lista con ID NavegationMenu
-    - Se aumenta el tamaño de la fuente
-    */
-    #NavegationMenu li {
-        font-size: 0.35cm;
-    }
-
-    /*
-    Elementos con clase Gallery
-    - El grid ahora tiene filas de 3 elementos
-    */
-    .Gallery {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
+#img-grid {
+    display: none;
 }
 
-/* Responsive breakpoint para pantallas mas anchas de 1000 pixeles */
-@media screen and (min-width: 1000px) {
+/* Media Query para pantallas mas anchas de 768 pixeles */
+@media screen and (min-width: 768px) {
     /*
-    Cabecera
-    - Cambiamos la distribucion de los objetos a centrada
+    Elementos con ID #img-carousel y #img-grid
+    - Para pantallas más grandes, se muestra el grid y se oculta el carrusel
     */
-    header {
-        justify-content: center;
+    #img-carousel {
+        display: none;
     }
     
-    /*
-    Elemento con ID Logo
-    - Se reduce la anchura del logo
-    */
-    #Logo {
-        width: 10%;
-    }
-
-    /*
-    Elementos con ID CompanyName
-    - Se cambia la anchura al 50% de la pagina
-    - Se aumenta el tamaño de fuente
-    */
-    #CompanyName {
-        font-size: 1.5cm;
-    }
-
-    /*
-    Elementos de lista con ID NavegationMenu
-    - Se aumenta el tamaño de la fuente
-    */
-    #NavegationMenu li {
-        font-size: 0.4cm;
-    }
-}
-
-/* Responsive breakpoint para pantallas mas anchas de 1000 pixeles */
-@media screen and (min-width: 1500px) {
-    /*
-    Elementos con ID CompanyName
-    - Se cambia la anchura al 42% de la pagina
-    */
-    #CompanyName {
-        width: 42%;
-    }
-
-    /*
-    Elementos de lista con ID NavegationMenu
-    - Se cambia la anchura al 8% de la pagina
-    */
-    #NavegationMenu {
-        width: 8%;
+    #img-grid {
+        display: flex;
     }
 }
